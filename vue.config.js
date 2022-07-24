@@ -9,8 +9,11 @@ function resolve(dir) {
   return path.join(__dirname, dir);
 }
 
+// NODE_ENV可能有五個取值 development local production 
 const NODE_ENV = process.env.NODE_ENV;
 const { mockUrl } = config[NODE_ENV];
+
+
 const isDev = NODE_ENV === "development" || NODE_ENV === "local";
 
 // All configuration item explanations can be find in https://cli.vuejs.org/config/
@@ -18,10 +21,11 @@ module.exports = {
   publicPath: "/",
   outputDir: "dist",
   assetsDir: "static",
-  lintOnSave: isDev,
+  lintOnSave: isDev,// 是否在保存的时候检查
   devServer: {
+    port: 3333,
     overlay: {
-      warnings: false,
+      warnings: true,
       errors: true,
     },
     proxy: {
@@ -35,8 +39,8 @@ module.exports = {
       },
     },
   },
-  configureWebpack: {
-    devtool: "source-map",
+  configureWebpack: {// 调整 webpack 配置最简单的方式就是在 vue.config.js 中的 configureWebpack 选项提供一个对象
+    devtool: "source-map",// 方便debug用的
     name: "vue-h5-template",
     resolve: {
       alias: {

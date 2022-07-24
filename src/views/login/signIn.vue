@@ -60,6 +60,7 @@
           to="/signup"
           >注册</van-button
         >
+        <!-- <router-link style="clear:both;" to="/singup">Home</router-link> -->
       </div>
     </van-form>
   </div>
@@ -81,6 +82,10 @@ export default {
       loading: false,
       captchaSvg: "",
     };
+  },
+  mounted(){
+console.log('source map!!!')
+console.log(a); //这一行肯定会报错
   },
   methods: {
     onSubmit() {

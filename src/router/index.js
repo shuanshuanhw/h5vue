@@ -6,7 +6,7 @@ Vue.use(VueRouter);
 const routes = [
   {
     path: "*",
-    component: () => import("@/views/power"),
+    component: () => import("@/views/login/signIn"),
     meta: {
       title: "能力",
       showTab: true,

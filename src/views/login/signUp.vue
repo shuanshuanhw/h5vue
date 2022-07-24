@@ -79,6 +79,8 @@
           native-type="submit"
           >注册</van-button
         >
+
+        
       </div>
     </van-form>
   </div>

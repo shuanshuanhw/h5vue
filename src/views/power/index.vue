@@ -16,6 +16,9 @@
       <van-cell title="接口请求" is-link to="/show" />
       <van-cell title="更新中..." />
     </van-cell-group>
+
+    <router-link style="clear:both;" to="/singin">Home</router-link>
+    
   </div>
 </template>
 
